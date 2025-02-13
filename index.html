@@ -15,10 +15,20 @@
 
 <body>
     <div class="text">
-        <h1>Happy Valentine's Day! Koko💖</h1>
-        <p>"I love you even when I’m hungry." </p>
-    </div>
+        <h1>Happy Valentine's Day! Koko
+        </h1>
+        <p>"I love you even when I’m hungry." <span class="heart" onclick="toggleBeat()">
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 21s-6.2-4.9-10-9C-2 5 3.2 0 8 3c1.2.8 2 2 2 2s.8-1.2 2-2c4.8-3 10 2 6 9-3.8 4.1-10 9-10 9z" />
+                </svg>
 
+                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Pixel_heart_-_animated.gif" alt="Heart"> -->
+            </span> </p>
+    </div>
+    <div id="extraImage" class="hidden-image">
+        <img src="./images/image.png" alt="">
+    </div>
     <div class="main">
         <div class="gallery">
 
@@ -34,6 +44,23 @@
         </div>
     </div>
 
+
+    <!-- <img id="extraImage" class="hidden-image" src="https://via.placeholder.com/150" alt="Extra Image"> -->
+
+
+    <script>
+        function toggleBeat() {
+            const heart = document.querySelector('.heart > svg');
+            const extraImage = document.getElementById('extraImage');
+            if (heart.style.animationPlayState === 'paused') {
+                heart.style.animationPlayState = 'running';
+                extraImage.style.opacity = '0';
+            } else {
+                heart.style.animationPlayState = 'paused';
+                extraImage.style.opacity = '1';
+            }
+        }
+    </script>
 </body>
 
 </html>

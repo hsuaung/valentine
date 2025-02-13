@@ -13,11 +13,12 @@
   inset: calc(50% - var(--s) / 3);
   cursor: pointer;
   --g: linear-gradient(#fff 0 0) no-repeat;
-  background: var(--g) 50%/60% 3px, var(--g) 50%/3px 60%, #222;
+  background: var(--g) 50%/60% 3px, var(--g) 50%/3px 60%, #716c6c66;
   transition: 1.5s;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  opacity: 0.4;
 }
 .gallery > img {
   width: var(--s);
@@ -79,4 +80,45 @@ body {
 }
 .text {
   text-align: center;
+}
+.heart {
+  transform: translate(-50%, -50%);
+  transition: transform 2s;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.heart > svg {
+  width: 50px;
+  height: auto;
+  animation-name: beat;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.hidden-image {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 2s;
+}
+.hidden-image img {
+  width: 300px;
+  border-radius: 20px;
 }
